@@ -37,7 +37,12 @@ public class PacificAtlantic {
         for (int i = 0; i < numRows; i++) {
             for (int j = 0; j < numCols; j++) {
                 if (pReachable[i][j] && aReachable[i][j]) {
-                    commonCells.add(List.of(i, j));
+                    int finalI = i;
+                    int finalJ = j;
+                    commonCells.add(new ArrayList<Integer>() {{
+                        add(finalI);
+                        add(finalJ);
+                    }});
                 }
             }
         }

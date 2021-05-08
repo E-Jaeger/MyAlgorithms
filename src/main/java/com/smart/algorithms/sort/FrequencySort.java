@@ -40,7 +40,9 @@ public class FrequencySort {
         for (int i = buckets.length - 1; i > 0; i--) {
             if (buckets[i] != null && buckets[i].size() != 0) {
                 for (Character ch : buckets[i]) {
-                    stringBuilder.append(String.valueOf(ch).repeat(i));
+                    for (int j = 1; j <= i; j++) {
+                        stringBuilder.append(String.valueOf(ch));
+                    }
                 }
             }
         }
@@ -76,7 +78,10 @@ public class FrequencySort {
         for (int i = len - 1; i >= 0; i--) {
             swap(heap, 0, i);
             sink(heap, i, 0);
-            res.append(String.valueOf(heap[i]).repeat(map.get(heap[i])));
+            Integer times = map.get(heap[i]);
+            for (int j = 1; j <= times; j++) {
+                res.append(String.valueOf(heap[i]));
+            }
         }
         System.out.println(Arrays.toString(heap));
         return String.valueOf(res);
