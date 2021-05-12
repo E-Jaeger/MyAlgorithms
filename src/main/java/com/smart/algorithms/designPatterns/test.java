@@ -1,5 +1,7 @@
 package com.smart.algorithms.designPatterns;
 
+import com.smart.algorithms.designPatterns.singleTon.InstanceFactory;
+
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -25,5 +27,8 @@ public class test {
         System.out.println(Arrays.toString(c));
         System.out.println("数组d的各个元素中的值：");
         System.out.println(Arrays.toString(d));
+
+        System.out.println(InstanceFactory.getInstance());
+        System.out.println(InstanceFactory.getInstance());
     }
 }
